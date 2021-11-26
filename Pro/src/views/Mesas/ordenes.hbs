@@ -1,0 +1,41 @@
+<div class="container p-4">
+    <div class="row"></div>
+    
+    <!--En esta seccion se listan los itemas para poder hacer las ordenes  -->
+    <div class="card">
+        <div class="card-body">
+            
+            <table class="list" WIDTH="800">
+                <thead>
+            
+                
+            <form action="/Mesas/ordenes/{{mesas.id}}" method="POST">
+                   {{#each link}}
+                     <tr >
+                   <th> <input type="text" readonly="readonly" name="title" class="form-control" placeholder="Nombre del item" value="{{title}}" autofocus></th> 
+                              
+                   <th> <input type="text" readonly="readonly" name="description" size="28" class="form-control" placeholder="Descripcion "value="{{description}}"></th> 
+                
+                   <th> <input type="text" name="costo" readonly="readonly" class="form-control" placeholder="Costo" value="{{costo}}"></th> 
+            
+                  <th> <input type="number" name="cantidad"  class="form-control" placeholder="1 " min ="0" max="{{cantidad}}"></th> 
+                  {{/each }}
+                  </tr>
+                  
+                    <div class="form-group">
+                        
+                    <button class="btn btn-success btn-block">
+                        Guardar orden
+                    </button>
+                </div>
+            </form>
+                
+              
+            </thead>
+            </table>
+            
+        </div>
+    </div>
+    
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<!--En esta seccion se listan las mesas   -->
+<div class="container p-4">
+    <div class="row">
+        {{#each mesitas}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <a class="m-2">
+                        <h3 class="card-title text-uppercase">
+                           Mesa {{NuMesa}}
+                        </h3>
+                    </a>
+                    
+                    <p class="m-2">La mesa se encuentra: {{estado}}</p>
+                    <p class="text-muted">
+                    </p>
+                    
+                   <script>if({{estado}}=="Ocupada") {</script>        
+                    <a class="btn btn-success" href="/Mesas/Estado1/{{id}}">
+                        Cambiar Estado: {{estado}}  
+                    </a>
+                    
+                    <script>}else{ if({{estado}}=="Disponible"){</script>
+                    <a class="btn btn-danger" href="/Mesas/Estado2/{{id}}">
+                       Cambiar Estado: {{estado}} 
+                    </a>
+                   
+                    <script>}</script> 
+                    <a class="btn btn-secondary" href="/Mesas/ordenes/{{id}}">
+                        Hacer pedido
+                    </a>
+                         
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>No hay mesas</p>
+                <a href="/Mesas/add">Agrega uno</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
